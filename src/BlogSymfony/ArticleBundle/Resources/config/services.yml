@@ -1,0 +1,4 @@
+services:
+#    blog_symfony_article.example:
+#        class: BlogSymfony\ArticleBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

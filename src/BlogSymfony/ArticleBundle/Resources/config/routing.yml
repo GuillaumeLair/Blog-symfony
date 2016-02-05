@@ -1,0 +1,21 @@
+blog_accueil:
+    path:        /{page}
+    defaults:    { _controller: BlogSymfonyArticleBundle:Default:accueil, page: 1 }
+    requirements:
+        page: '[0-9]+'
+    
+blog_article:
+    path:        /article/{slug}
+    defaults:    { _controller: BlogSymfonyArticleBundle:Default:article }
+    
+redaction_article:
+    path:        /backoffice/redaction/{slug}
+    defaults:    { _controller: BlogSymfonyArticleBundle:Default:redaction, slug: '' }
+    
+backoffice:
+    path:        /backoffice
+    defaults:    { _controller: BlogSymfonyArticleBundle:Default:backoffice }
+    
+suppression_article:
+    path:        /backoffice/suppression/{slug}
+    defaults:    { _controller: BlogSymfonyArticleBundle:Default:suppression }

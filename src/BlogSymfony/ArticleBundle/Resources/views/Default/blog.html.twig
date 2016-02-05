@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+		<title>Blog - {% block titre_page %}{% endblock %}</title>
+	</head>
+	<body>
+	
+		<header>
+			<h1>Blog</h1>
+			<h2>{% block h2 %}{% endblock %}</h2>
+			{% if app.user %}
+				<p>Bonjour {{ app.user.username }} </p>
+			{% endif %}
+		</header>
+		<hr />
+		
+		<nav>
+			<ul>
+				<li><a href="{{ url('blog_accueil') }}">Accueil</a></li>
+				
+				
+				{% if is_granted('ROLE_REDACTEUR') %}
+				<li><a href="{{ url('backoffice') }}">Backoffice</a></li>
+				{% endif %}
+				
+				{% if not is_granted('ROLE_USER') %}
+				<li><a href="{{ url('fos_user_registration_register') }}">S'inscrire</a></li>
+				<li><a href="{{ url('fos_user_security_login') }}">Connexion</a></li>
+				{% endif %}
+				
+				{% if is_granted('ROLE_USER') %}
+				<li><a href="{{ url('fos_user_security_logout') }}">Déconnexion</a></li>
+				<li><a href="{{ url('fos_user_profile_show') }}">Mon profil</a></li>
+				{% endif %}
+				
+			</ul>
+		</nav>
+		
+		
+		<section>
+			{% block content %}{% endblock %}
+		</section>
+		
+		
+		<hr />
+		<footer>
+			<p>
+				Site crée par Christophe Boucrot.
+				<br />
+				<a href="mailto:#">Contact</a>
+			</p>
+		</footer>
+	</body>
+</html>

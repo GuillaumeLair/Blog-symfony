@@ -1,0 +1,8 @@
+blog_symfony_user:
+    resource: "@BlogSymfonyUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+blog_symfony_article:
+    resource: "@BlogSymfonyArticleBundle/Resources/config/routing.yml"
+    prefix:   /
+

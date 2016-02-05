@@ -1,0 +1,7 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show">
+    <p>Mon nom d'utilisateur: {{ user.username }}</p>
+    <p>Mon email: {{ user.email }}</p>
+	<p><a href="{{ url('fos_user_profile_edit') }}">(Editer)</a></p>
+</div>

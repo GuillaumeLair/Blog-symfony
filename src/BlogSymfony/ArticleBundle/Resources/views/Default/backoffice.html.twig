@@ -1,0 +1,62 @@
+{% extends "BlogSymfonyArticleBundle:Default:blog.html.twig" %}
+
+{% block titre_page %}Backoffice{% endblock %}
+
+{% block h2 %}Backoffice{% endblock %}
+
+{% block content %}
+	<article>
+	<p>
+		{{ msgNotice }}
+	</p>
+	<a href="{{ url('redaction_article') }}">Rédiger un nouvel article</a>
+	<table>
+		<tr>
+			<th>Titre</th>
+			<th>Slug</th>
+			<th>Date</th>
+			<th>Corps</th>
+		</tr>
+		{% for article in tabArticles %}
+				<tr>
+					<td>{{ article.titre }}</td>
+					<td>{{ article.slug }}</td>
+					<td>{{ article.date|date('d/m/Y à H:i') }}</td>
+					<td>{{ article.corps|slice(0,10) }} 
+					{% if article.corps|length > 10 %}
+					...
+					{% endif %}</td>
+					<td><a href="{{ url('redaction_article', {'slug': article.slug}) }}">Editer</a></td>
+					<td><a href="{{ url('suppression_article', {'slug': article.slug}) }}">Supprimer</a></td>
+				</tr>
+		{% endfor %}
+	</table>
+	<br/>
+	</article>
+	{% if is_granted('ROLE_ADMIN') %}
+	<!------------------------------ USER ------------------------------------>
+	
+	<article>
+	
+		<table>
+			
+			<tr>
+				<th>Nom D'utilateur</th>
+				<th>Email</th>
+				<th>Rôles</th>
+			</tr>
+			
+		{% for user in tabUsers %}
+			<tr>
+				<td>{{ user.username }}</td>
+				<td>{{ user.email }}</td>
+				<td>{{ user.roles|join('<br/>')|raw }}</td>	
+			</tr>
+		{% endfor %}
+			
+		</table>
+	<br/>
+	</article>
+	{% endif %}
+	
+{% endblock %}	

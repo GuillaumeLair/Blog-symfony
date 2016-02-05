@@ -1,0 +1,16 @@
+{% extends "BlogSymfonyArticleBundle:Default:blog.html.twig" %}
+
+{% block titre_page %}{{ article.titre }}{% endblock %}
+
+{% block h2 %}{{ article.titre }}{% endblock %}
+
+{% block content %}
+				<article>
+				<h3>{{ article.titre }}</h3> 		
+				<h4>Le {{ article.date|date('d/m/y à H:i') }}</h4>
+				<p>{{ article.corps }}</p>
+				{% if is_granted('ROLE_REDACTEUR') %}
+				<p><a href="{{ url( 'redaction_article' ,{'slug': article.slug}) }}">(Editer)</a></p>
+				{% endif %}
+				</article>
+{% endblock %}	

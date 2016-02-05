@@ -1,0 +1,29 @@
+{% extends "BlogSymfonyArticleBundle:Default:blog.html.twig" %}
+
+{% block titre_page %}Accueil{% endblock %}
+
+{% block h2 %} Accueil - Page {{page}}{% endblock %}
+
+{% block content %}
+			{% for article in tabArticles %}
+				<article>
+				<h3><a href="{{ url('blog_article', {'slug': article.slug}) }}">{{article.titre}}</a></h3> 		
+				<h4>Le {{article.date|date('d/m/y à H:i')}}</h4>
+				<p>{{article.corps}}</p><br />
+				</article>
+			
+		{% else %}
+			<p>Pas d'articles</p>
+		{% endfor %}
+	<br/>
+		
+	<div>
+		{% if page != 1%}
+		<a href="{{ path('blog_accueil', {'page': page-1}) }}">&lt;</a>
+		{% endif %}
+		{{ page }}
+		{% if page < nbPages %}
+		<a href="{{ url('blog_accueil', {'page': page+1}) }}">&gt;</a>	
+		{% endif %}
+	</div>	
+{% endblock %}	

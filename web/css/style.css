@@ -1,0 +1,206 @@
+/* General */
+
+@font-face {
+    font-family: 'DitedRegular';
+    src: url('fonts/Dited-webfont.eot');
+    src: url('fonts/-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Dited-webfont.woff') format('woff'),
+         url('fonts/Dited-webfont.ttf') format('truetype'),
+         url('fonts/Dited-webfont.svg#DitedRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body
+{
+	text-align: center;
+	width: 720px;
+	margin: auto;
+	background: url("../img/paper019.jpg");
+}
+
+hr
+{
+	display: none;
+}
+
+/* Header */
+
+header
+{
+	font-family: "DitedRegular", "Trebuchet MS", Arial, sans-serif;
+	
+	border-radius: 15px;
+	background-color: rgba(255, 255, 255, 0.5);
+	box-shadow: 0px 0px 10px white;
+	-moz-box-shadow: 0px 0px 10px white;
+	-webkit-box-shadow: 0px 0px 10px white;
+	-o-box-shadow: 0px 0px 10px white;
+}
+
+header h1
+{
+	text-transform: uppercase;
+}
+
+/* Menu */
+
+nav
+{
+	float: left;
+	width: 150px;
+	
+	margin: 10px;
+	position: fixed;
+	
+	border-radius: 15px;
+	background-color: rgba(255, 255, 255, 0.5);
+	box-shadow: 0px 0px 10px white;
+	-moz-box-shadow: 0px 0px 10px white;
+	-webkit-box-shadow: 0px 0px 10px white;
+	-o-box-shadow: 0px 0px 10px white;
+}
+
+nav ul
+{
+	list-style-type: none;
+	text-align: left;
+}
+
+nav a
+{
+	color: black;
+	-moz-transition-property: color, font-size;
+	-webkit-transition-property: color, font-size;
+	-o-transition-property: color, font-size;
+	-moz-transition-duration: 1s;
+	-webkit-transition-duration: 1s;
+	-o-transition-duration: 1s;
+}
+
+nav a:hover
+{
+	color: red;
+	font-size: 150%;
+}
+
+/* Content */
+
+section
+{
+	float: right;
+}
+
+article, form
+{
+	/* Dimensions des articles, et du formulaire de signup.html */
+	width: 500px;
+	margin: 10px;
+	padding: 10px;
+	
+	border-radius: 15px;
+	background-color: rgba(255, 255, 255, 0.5);
+	box-shadow: 0px 0px 10px white;
+	-moz-box-shadow: 0px 0px 10px white;
+	-webkit-box-shadow: 0px 0px 10px white;
+	-o-box-shadow: 0px 0px 10px white;
+}
+
+article h3
+{
+	/* Le titre de l'article */
+	float: left;
+	display: inline-mode;
+	margin-left: 40px;
+}
+
+article h4
+{
+	/* La date de l'article */
+	float: right;
+	display: inline-mode;
+	margin-right: 40px;
+}
+
+article p
+{
+	/* Non flottant */
+	clear: both;
+}
+
+article h5 {
+	float: right;
+	margin: 0;
+}
+
+article:after {
+	clear: both;
+}
+
+form
+{
+	text-align: left;
+}
+
+form div
+{
+	clear: both;
+	margin: 10px 0;
+}
+
+form input, form textarea
+{
+	/* Pour aligner les champs */
+	float: right;
+}
+
+#form_date_time, #form_date_date {
+	margin: 0px;
+	float: right;
+}
+
+.form_button
+{
+	float: none;
+	display: block;
+	margin: auto;
+	margin-top: 5px;
+}
+
+form input :required
+{
+	border-color: red;
+}
+
+/* Footer */
+
+footer
+{
+	margin-top: 50px;
+	font-size: 80%;
+	clear: both;
+	
+	border-radius: 15px;
+	background-color: rgba(255, 255, 255, 0.5);
+	box-shadow: 0px 0px 10px white;
+	-moz-box-shadow: 0px 0px 10px white;
+	-webkit-box-shadow: 0px 0px 10px white;
+	-o-box-shadow: 0px 0px 10px white;
+}
+
+table {
+	margin: auto;
+	width: 90%;
+	margin-top: 10px;
+	border: 1px solid black;
+}
+
+td {
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid black;
+}
+
+th {
+	background-color: white;
+}
